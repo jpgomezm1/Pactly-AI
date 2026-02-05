@@ -1,0 +1,147 @@
+"""Timeline PDF generation — extract dates via LLM and build branded PDF."""
+from __future__ import annotations
+
+import base64
+import io
+import logging
+from pathlib import Path
+from typing import Optional
+
+from llm.anthropic_client import generate_json
+
+logger = logging.getLogger(__name__)
+
+PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
+
+
+def extract_timeline_dates(contract_text: str) -> list[dict]:
+    """Use Claude to extract critical dates from the contract text."""
+    v2_path = PROMPTS_DIR / "extract_timeline_v2.md"
+    v1_path = PROMPTS_DIR / "extract_timeline_v1.md"
+    prompt_template = (v2_path if v2_path.exists() else v1_path).read_text()
+    prompt = prompt_template.replace("{contract_text}", contract_text[:15000])
+    result = generate_json(prompt, "Return the timeline JSON.")
+    result.pop("_meta", None)
+    return result.get("timeline", [])
+
+
+def create_deliverables_from_timeline(session, deal, timeline: list[dict]) -> list:
+    """Create Deliverable rows from extracted timeline items."""
+    from models.deliverable import Deliverable
+
+    deliverables = []
+    for item in timeline:
+        # Map LLM "buyer"/"seller" to "admin"/"counterparty" based on deal_type
+        llm_party = item.get("responsible_party", "buyer")
+        if deal.deal_type == "sale":
+            # admin = seller, counterparty = buyer
+            mapped = "counterparty" if llm_party == "buyer" else "admin"
+        else:
+            # admin = buyer, counterparty = seller
+            mapped = "admin" if llm_party == "buyer" else "counterparty"
+
+        d = Deliverable(
+            deal_id=deal.id,
+            description=item.get("description", ""),
+            due_date=item.get("due_date", ""),
+            category=item.get("category", "other"),
+            responsible_party=mapped,
+            ai_suggested_party=llm_party,
+            is_confirmed=False,
+            status="pending",
+        )
+        session.add(d)
+        deliverables.append(d)
+    return deliverables
+
+
+def build_pdf(
+    timeline: list[dict],
+    property_address: str,
+    company_name: str = "Pactly",
+    primary_color: str = "#14B8A6",
+) -> bytes:
+    """Generate a branded Critical Dates PDF using reportlab."""
+    from reportlab.lib.pagesizes import letter
+    from reportlab.lib.units import inch
+    from reportlab.lib import colors
+    from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+    from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+
+    buf = io.BytesIO()
+    doc = SimpleDocTemplate(buf, pagesize=letter, topMargin=0.75 * inch, bottomMargin=0.5 * inch)
+    elements = []
+    styles = getSampleStyleSheet()
+
+    # Parse primary color
+    try:
+        r = int(primary_color[1:3], 16) / 255
+        g = int(primary_color[3:5], 16) / 255
+        b = int(primary_color[5:7], 16) / 255
+        brand_color = colors.Color(r, g, b)
+    except Exception:
+        brand_color = colors.HexColor("#14B8A6")
+
+    # Title
+    title_style = ParagraphStyle(
+        "TitleStyle",
+        parent=styles["Heading1"],
+        fontSize=18,
+        textColor=brand_color,
+        spaceAfter=6,
+    )
+    elements.append(Paragraph(f"{company_name}", title_style))
+    elements.append(Paragraph("Critical Dates", styles["Heading2"]))
+    if property_address:
+        elements.append(Paragraph(f"Property: {property_address}", styles["Normal"]))
+    elements.append(Spacer(1, 0.3 * inch))
+
+    if not timeline:
+        elements.append(Paragraph("No critical dates were extracted from this contract.", styles["Normal"]))
+    else:
+        # Build table
+        header = ["#", "Description", "Due Date", "Category"]
+        data = [header]
+        for i, item in enumerate(timeline, 1):
+            data.append([
+                str(i),
+                item.get("description", ""),
+                item.get("due_date", ""),
+                item.get("category", "").replace("_", " ").title(),
+            ])
+
+        table = Table(data, colWidths=[0.4 * inch, 3.2 * inch, 1.5 * inch, 1.2 * inch])
+        table.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, 0), brand_color),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, 0), 10),
+            ("FONTSIZE", (0, 1), (-1, -1), 9),
+            ("BOTTOMPADDING", (0, 0), (-1, 0), 8),
+            ("TOPPADDING", (0, 1), (-1, -1), 6),
+            ("BOTTOMPADDING", (0, 1), (-1, -1), 6),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.grey),
+            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.whitesmoke, colors.white]),
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ]))
+        elements.append(table)
+
+    elements.append(Spacer(1, 0.5 * inch))
+    footer_style = ParagraphStyle("Footer", parent=styles["Normal"], fontSize=8, textColor=colors.grey)
+    elements.append(Paragraph(f"Generated by {company_name} via Pactly — AI-powered contract management", footer_style))
+
+    doc.build(elements)
+    return buf.getvalue()
+
+
+def get_brand_for_deal_sync(session, deal) -> dict:
+    """Fetch organization brand settings for a deal (sync context)."""
+    brand = {"company_name": "Pactly", "primary_color": "#14B8A6", "logo_url": None}
+    if deal.organization_id:
+        from models.organization import Organization
+        org = session.get(Organization, deal.organization_id)
+        if org:
+            brand["company_name"] = org.name or "Pactly"
+            brand["primary_color"] = org.primary_color or "#14B8A6"
+            brand["logo_url"] = org.logo_url
+    return brand

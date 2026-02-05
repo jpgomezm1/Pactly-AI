@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Bash(pip install:*)",
+      "Bash(pkill:*)",
+      "Bash(npx next build:*)",
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(npm install)",
+      "Bash(npx tsc:*)",
+      "Bash(docker.exe compose:*)",
+      "Bash(psql:*)",
+      "Bash(python:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:storage.googleapis.com)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "WebSearch",
+      "WebFetch(domain:services9.arcgis.com)",
+      "Bash(wget:*)",
+      "Bash(docker compose exec api python3:*)",
+      "Bash(docker.exe version:*)",
+      "Bash(docker-compose.exe version:*)",
+      "Bash(\"/mnt/c/Program Files/Docker/Docker/resources/bin/docker.exe\" compose exec api python3:*)"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "template_slug": "far_bar_asis",
+  "template_name": "Florida FAR/BAR AS-IS Residential Contract",
+  "template_version": "ASIS-7",
+  "pdf_file": "pdfs/far_bar_asis.pdf",
+  "notes": "Field names (pdf_field_name) are PLACEHOLDERS. Run extract_pdf_fields.py on actual PDF to get real field names.",
+  "field_mappings": {
+    "text_fields": {
+      "buyer_name": {
+        "pdf_field_name": "BuyerName",
+        "transform": "uppercase",
+        "max_font_size": 10,
+        "min_font_size": 6
+      },
+      "seller_name": {
+        "pdf_field_name": "SellerName",
+        "transform": "uppercase",
+        "max_font_size": 10,
+        "min_font_size": 6
+      },
+      "buyer_agent": {
+        "pdf_field_name": "BuyerAgentName",
+        "transform": null
+      },
+      "seller_agent": {
+        "pdf_field_name": "SellerAgentName",
+        "transform": null
+      },
+      "property_address": {
+        "pdf_field_name": "PropertyStreetAddress",
+        "multiline": false
+      },
+      "property_city": {
+        "pdf_field_name": "PropertyCity"
+      },
+      "property_county": {
+        "pdf_field_name": "PropertyCounty"
+      },
+      "property_zip": {
+        "pdf_field_name": "PropertyZip"
+      },
+      "property_tax_id": {
+        "pdf_field_name": "TaxParcelID"
+      },
+      "legal_description": {
+        "pdf_field_name": "LegalDescription",
+        "multiline": true,
+        "max_font_size": 9,
+        "min_font_size": 6
+      },
+      "purchase_price": {
+        "pdf_field_name": "PurchasePrice",
+        "format": "currency"
+      },
+      "earnest_money": {
+        "pdf_field_name": "InitialDeposit",
+        "format": "currency"
+      },
+      "additional_deposit": {
+        "pdf_field_name": "AdditionalDeposit",
+        "format": "currency"
+      },
+      "loan_amount": {
+        "pdf_field_name": "LoanAmount",
+        "format": "currency"
+      },
+      "interest_rate_cap": {
+        "pdf_field_name": "InterestRateCap",
+        "format": "percent"
+      },
+      "loan_term_years": {
+        "pdf_field_name": "LoanTerm"
+      },
+      "loan_approval_period_days": {
+        "pdf_field_name": "LoanApprovalDays"
+      },
+      "seller_concessions": {
+        "pdf_field_name": "SellerConcessions",
+        "format": "currency"
+      },
+      "closing_date": {
+        "pdf_field_name": "ClosingDate",
+        "format": "date",
+        "date_format": "%B %d, %Y"
+      },
+      "acceptance_deadline": {
+        "pdf_field_name": "AcceptanceDeadline",
+        "format": "date",
+        "date_format": "%B %d, %Y"
+      },
+      "inspection_period_days": {
+        "pdf_field_name": "InspectionPeriod"
+      },
+      "occupancy_date": {
+        "pdf_field_name": "OccupancyDate",
+        "format": "date",
+        "date_format": "%B %d, %Y"
+      },
+      "escrow_agent_name": {
+        "pdf_field_name": "EscrowAgentName"
+      },
+      "escrow_agent_address": {
+        "pdf_field_name": "EscrowAgentAddress"
+      },
+      "escrow_agent_phone": {
+        "pdf_field_name": "EscrowAgentPhone",
+        "format": "phone"
+      },
+      "escrow_agent_email": {
+        "pdf_field_name": "EscrowAgentEmail"
+      },
+      "title_company": {
+        "pdf_field_name": "TitleCompany"
+      },
+      "home_warranty_provider": {
+        "pdf_field_name": "HomeWarrantyProvider"
+      },
+      "home_warranty_cost": {
+        "pdf_field_name": "HomeWarrantyCost",
+        "format": "currency"
+      },
+      "personal_property_included": {
+        "pdf_field_name": "PersonalPropertyIncluded",
+        "multiline": true
+      },
+      "personal_property_excluded": {
+        "pdf_field_name": "PersonalPropertyExcluded",
+        "multiline": true
+      },
+      "special_conditions": {
+        "pdf_field_name": "AdditionalTerms",
+        "multiline": true,
+        "max_font_size": 9,
+        "min_font_size": 6
+      }
+    },
+    "checkbox_fields": {
+      "financing_cash": {
+        "pdf_field_name": "CheckCash",
+        "condition": "financing_type == 'Cash'"
+      },
+      "financing_conventional": {
+        "pdf_field_name": "CheckConventional",
+        "condition": "financing_type == 'Conventional'"
+      },
+      "financing_fha": {
+        "pdf_field_name": "CheckFHA",
+        "condition": "financing_type == 'FHA'"
+      },
+      "financing_va": {
+        "pdf_field_name": "CheckVA",
+        "condition": "financing_type == 'VA'"
+      },
+      "inspection_contingency": {
+        "pdf_field_name": "CheckInspectionContingency",
+        "condition": "inspection_contingency == true"
+      },
+      "financing_contingency": {
+        "pdf_field_name": "CheckFinancingContingency",
+        "condition": "financing_contingency == true"
+      },
+      "appraisal_contingency": {
+        "pdf_field_name": "CheckAppraisalContingency",
+        "condition": "appraisal_contingency == true"
+      },
+      "title_contingency": {
+        "pdf_field_name": "CheckTitleContingency",
+        "condition": "title_contingency == true"
+      },
+      "title_insurance_seller": {
+        "pdf_field_name": "CheckTitleSeller",
+        "condition": "title_insurance_paid_by == 'seller'"
+      },
+      "title_insurance_buyer": {
+        "pdf_field_name": "CheckTitleBuyer",
+        "condition": "title_insurance_paid_by == 'buyer'"
+      },
+      "title_insurance_miami_dade": {
+        "pdf_field_name": "CheckTitleMiamiDade",
+        "condition": "title_insurance_paid_by == 'miami_dade_broward'"
+      },
+      "assignability_no": {
+        "pdf_field_name": "CheckAssignNo",
+        "condition": "assignability == 'may_not_assign'"
+      },
+      "assignability_yes_released": {
+        "pdf_field_name": "CheckAssignYesReleased",
+        "condition": "assignability == 'assign_and_release'"
+      },
+      "assignability_yes_not_released": {
+        "pdf_field_name": "CheckAssignYesNotReleased",
+        "condition": "assignability == 'assign_not_released'"
+      },
+      "home_warranty_na": {
+        "pdf_field_name": "CheckWarrantyNA",
+        "condition": "home_warranty == 'N/A'"
+      },
+      "home_warranty_buyer": {
+        "pdf_field_name": "CheckWarrantyBuyer",
+        "condition": "home_warranty == 'buyer'"
+      },
+      "home_warranty_seller": {
+        "pdf_field_name": "CheckWarrantySeller",
+        "condition": "home_warranty == 'seller'"
+      }
+    },
+    "calculated_fields": {
+      "balance_to_close": {
+        "pdf_field_name": "BalanceToClose",
+        "formula": "purchase_price - earnest_money - (additional_deposit or 0)",
+        "format": "currency"
+      }
+    }
+  },
+  "signature_fields": [
+    "BuyerSignature1",
+    "BuyerSignature2",
+    "SellerSignature1",
+    "SellerSignature2",
+    "BuyerAgentSignature",
+    "SellerAgentSignature"
+  ]
+}

@@ -1,0 +1,221 @@
+================================================================================
+                     HOME INSPECTION REPORT
+================================================================================
+
+Inspection Company:   SafeHome Inspections of South Florida, Inc.
+Inspector:            Carlos Mendez, Licensed HI #HI-8847
+License:              Florida Home Inspector License #HI-8847
+Phone:                (305) 555-0283
+Email:                cmendez@safehomeinspections.com
+
+================================================================================
+INSPECTION DETAILS
+================================================================================
+
+Report Number:        SHI-2026-00412
+Inspection Date:      01/28/2026
+Time:                 9:00 AM — 12:30 PM
+Weather Conditions:   Clear, 78°F, Humidity 65%
+
+Property Address:     123 Palm Avenue, Miami, FL 33101
+Client (Buyer):       John Smith
+Present at Inspection: John Smith (Buyer), Maria Rodriguez (Listing Agent)
+
+Property Type:        Single Family Residence
+Year Built:           2004
+Approximate Size:     2,450 sq ft living area
+Stories:              2
+
+================================================================================
+INSPECTION SCOPE
+================================================================================
+
+This inspection was conducted in accordance with the Standards of Practice of
+the Florida Association of Inspectors and InterNACHI. This is a visual,
+non-invasive inspection of the readily accessible areas of the property.
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+Overall Condition:    GOOD
+
+Items Requiring Immediate Attention:     2
+Items Requiring Monitoring:              4
+Maintenance Recommendations:             6
+Safety Concerns:                         1
+
+  ** ITEMS REQUIRING IMMEDIATE ATTENTION **
+
+  1. ELECTRICAL — Main Panel: One double-tapped breaker identified at position
+     #14 (two wires connected to a single-pole breaker rated for one wire).
+     This is a fire hazard. Recommend licensed electrician evaluate and install
+     a tandem breaker or add a new breaker. Estimated repair: $150–$300.
+
+  2. PLUMBING — Guest Bathroom (1st Floor): Slow drain in bathtub. Upon testing,
+     drain took over 90 seconds to clear. Evidence of minor discoloration around
+     drain ring. Recommend licensed plumber evaluate for possible partial clog
+     or deteriorated drain assembly. Estimated repair: $100–$250.
+
+  ** SAFETY CONCERN **
+
+  1. POOL — Pool barrier gate (east side) does not self-close and self-latch as
+     required by Florida Building Code Section 454.2.17. Recommend adjustment or
+     replacement of gate hardware. Estimated repair: $75–$200.
+
+================================================================================
+DETAILED FINDINGS
+================================================================================
+
+1. ROOF
+--------------------------------------------------------------------------------
+Type:               Concrete tile
+Age:                Approximately 7 years (replaced 2019 per seller)
+Condition:          GOOD
+Observations:
+  - No visible cracked or missing tiles
+  - Roof penetration flashings in good condition
+  - Gutters and downspouts functioning properly
+  - Minor algae growth on north-facing slope (cosmetic only)
+Recommendation:     Routine cleaning recommended. No repairs needed.
+
+2. EXTERIOR
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Observations:
+  - CBS construction with stucco finish in good condition
+  - Recent exterior paint (2025 per seller), no peeling or cracking
+  - All windows are impact-rated, no visible damage or seal failures
+  - Soffit and fascia in good condition
+  - Driveway pavers level, no trip hazards
+  - Minor hairline stucco crack on east wall near garage (~18 inches).
+    Non-structural, cosmetic only. MONITOR.
+Recommendation:     Seal hairline crack during next paint cycle.
+
+3. STRUCTURAL
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Observations:
+  - Foundation: Slab-on-grade, no visible cracks or settlement
+  - Load-bearing walls: No visible deflection or cracking
+  - Ceiling and floor surfaces: Level, no visible sagging
+  - No signs of previous water intrusion or structural repair
+Recommendation:     None. Structure appears sound.
+
+4. ELECTRICAL
+--------------------------------------------------------------------------------
+Condition:          FAIR — See Immediate Attention Item #1
+Panel:              200 Amp main panel (Square D), located in garage
+Observations:
+  - Main panel accessible and properly labeled
+  - ** DOUBLE-TAPPED BREAKER at position #14 — IMMEDIATE ATTENTION **
+  - GFCI outlets present and functional in kitchen, bathrooms, garage, exterior
+  - AFCI breakers present for bedrooms (code compliant)
+  - Smoke detectors present in all required locations
+  - All tested outlets properly grounded and polarized
+  - Whole-house generator (Generac 22kW) — operational, last serviced 06/2025
+Recommendation:     Repair double-tapped breaker. Otherwise, system is in
+                    good working order.
+
+5. PLUMBING
+--------------------------------------------------------------------------------
+Condition:          FAIR — See Immediate Attention Item #2
+Observations:
+  - Water heater: Rheem 50-gallon, electric, installed 2020. Functional.
+  - Water pressure: 62 PSI at hose bib (within acceptable range 40-80 PSI)
+  - Supply lines: CPVC (original) with some copper transitions
+  - All faucets tested — functional, no leaks observed
+  - All toilets tested — flush and fill properly
+  - ** SLOW DRAIN in 1st floor guest bathtub — IMMEDIATE ATTENTION **
+  - Under-sink areas inspected — no visible leaks or moisture
+  - Washing machine connections: Functional, no leaks
+Recommendation:     Address slow drain. Consider re-piping CPVC to PEX in
+                    future (MONITOR — CPVC is 22 years old).
+
+6. HVAC
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Systems:            Two split systems (Carrier)
+  - Unit 1 (1st Floor): 3-ton, installed 2021. Cooling differential 18°F. Good.
+  - Unit 2 (2nd Floor): 2.5-ton, installed 2021. Cooling differential 17°F. Good.
+Observations:
+  - Both units responsive and cooling within manufacturer specs
+  - Air filters clean (recently replaced)
+  - Ductwork accessible portions in good condition
+  - Condensate drain lines clear
+  - Thermostat: Nest smart thermostat, functional
+Recommendation:     Continue regular maintenance. Both units under manufacturer
+                    warranty until 2031.
+
+7. INTERIOR
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Observations:
+  - Walls and ceilings: No cracks, stains, or evidence of water damage
+  - Flooring: Porcelain tile (1st floor) and hardwood (2nd floor) in good condition
+  - Doors: All interior doors open/close properly
+  - Windows: All impact windows operational, locks functional
+  - Kitchen appliances tested: Range, oven, dishwasher, microwave, disposal — all
+    functional
+  - Ceiling fans: All operational
+  - Minor scuff marks on 2nd floor hallway hardwood (cosmetic)
+Recommendation:     None. Interior well-maintained.
+
+8. POOL & POOL EQUIPMENT
+--------------------------------------------------------------------------------
+Condition:          GOOD — See Safety Concern #1
+Observations:
+  - Pool surface (pebble finish): Good condition, no visible cracks or staining
+  - Pool pump (Hayward, installed 2024): Operational, no unusual noise
+  - Pool filter (cartridge, installed 2024): Clean
+  - Pool heater (gas): Functional
+  - Pool screen enclosure: Good condition, re-screened 2024
+  - ** POOL GATE does not self-close/self-latch — SAFETY CONCERN **
+  - Water chemistry: Clear, appears properly maintained
+Recommendation:     Repair/adjust pool gate to comply with barrier code.
+
+9. ATTIC
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Observations:
+  - Accessed via pull-down ladder in 2nd floor hallway
+  - Insulation: Blown-in fiberglass, approximately R-30 (meets current code)
+  - No visible signs of roof leaks, pest activity, or mold
+  - Attic ventilation adequate (soffit + ridge vents)
+Recommendation:     None.
+
+10. GARAGE
+--------------------------------------------------------------------------------
+Condition:          GOOD
+Observations:
+  - Two-car attached garage
+  - Garage door opener: LiftMaster, functional, auto-reverse working
+  - Fire-rated door to interior: Present and functional
+  - Floor: Epoxy-coated, no significant cracks
+  - Electrical panel located here — accessible
+Recommendation:     None.
+
+================================================================================
+SUMMARY OF ESTIMATED REPAIR COSTS
+================================================================================
+
+  Immediate Attention:
+    - Double-tapped breaker repair:      $150 — $300
+    - Guest bath slow drain:             $100 — $250
+    - Pool gate self-close/latch:         $75 — $200
+                                        ─────────────
+    TOTAL ESTIMATED REPAIRS:             $325 — $750
+
+================================================================================
+DISCLAIMER
+================================================================================
+
+This inspection report is not a guarantee or warranty of any kind. It represents
+the inspector's professional opinion based on a visual examination of the readily
+accessible components at the time of inspection. Concealed or latent defects are
+excluded. This report is prepared exclusively for the client named above.
+
+================================================================================
+Inspector Signature: Carlos Mendez, HI #HI-8847
+Date: January 28, 2026
+================================================================================
