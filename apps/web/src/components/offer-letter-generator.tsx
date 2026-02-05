@@ -311,7 +311,7 @@ export function OfferLetterGenerator({ dealId, dealTitle, dealAddress }: OfferLe
                   <div className="col-span-2 md:col-span-3">
                     <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mb-1">Contingencies</p>
                     <div className="flex flex-wrap gap-1">
-                      {selectedLetter.contingencies.map((c, i) => (
+                      {selectedLetter.contingencies.map((c: string, i: number) => (
                         <Badge key={i} variant="outline" className="text-xs">{c}</Badge>
                       ))}
                     </div>
